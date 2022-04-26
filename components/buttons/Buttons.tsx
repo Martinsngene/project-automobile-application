@@ -1,25 +1,19 @@
-import Link from "next/link";
-
-interface ButtonProps {
+interface ButtonPropsI {
   children: React.ReactNode;
   className?: string;
   onClick?: any;
   textStyle?: string;
 }
 
-const CustomButton = ({
+export function CustomButton({
   children,
   className,
   onClick,
   textStyle,
-}: ButtonProps) => {
+}: ButtonPropsI) {
   return (
     <div className={className} onClick={onClick}>
-      <button>
-        <span className={textStyle}>{children}</span>
-      </button>
+      <button className={textStyle}>{children}</button>
     </div>
   );
-};
-
-export default CustomButton;
+}

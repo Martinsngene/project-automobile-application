@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-interface LinkProps {
-  children: React.ReactNode;
+interface LinkPropsI {
+  children?: React.ReactNode;
   className?: string;
   onClick?: any;
   textStyle?: string;
@@ -14,10 +14,10 @@ const CustomLink = ({
   onClick,
   textStyle,
   href,
-}: LinkProps) => {
+}: LinkPropsI) => {
   return (
     <div className={className} onClick={onClick}>
-      <Link href={`${href}`}>
+      <Link href={`${href}`} passHref={true}>
         <span className={textStyle}>{children}</span>
       </Link>
     </div>
